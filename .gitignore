@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+
+# Ingnore folder
+build/
+.vscode/
