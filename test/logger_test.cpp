@@ -34,5 +34,12 @@ TEST(loggerTestCases, log_logWithTimeFormat_logExpectedStringLength) {
     // since i could not know current time...
     // the output should similar with "Info: 01/10/22 00:11:33 test_tag:test_logger\n"
     // i just check its length here.
+    
+    // because windows and linux has different time format, so i add different expected result here.
+#if defined(WIN32) || defined(_WIN32)
     EXPECT_EQ(actualOutput.length(), 45);
+#else
+    EXPECT_EQ(actualOutput.length(), 52);
+#endif
+    
 }
