@@ -10,6 +10,13 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 
 # Now simply link against gtest or gtest_main as needed. Eg
-add_executable(unit_tests test.cpp)
-target_link_libraries(unit_tests gtest_main)
+add_executable(unit_tests test.cpp logger_test.cpp)
+
+# include directories
+target_include_directories(unit_tests PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../src/core/logger)
+
+# add link library
+target_link_libraries(unit_tests gtest_main logger)
+
+# add test
 add_test(NAME unit_tests COMMAND unit_tests)
