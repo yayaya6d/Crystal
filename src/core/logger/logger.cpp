@@ -13,12 +13,7 @@
 
 namespace Crystal { namespace core {
 
-class DefaultLogger : Logger {
-public:
-    DefaultLogger(const std::string timeFormat) : timeFormat(timeFormat) {};
-    ~DefaultLogger();
-
-    virtual void log (LogLevel logLevel, const std::string& tag, const std::string& message) override {
+void DefaultLogger::log (LogLevel logLevel, const std::string& tag, const std::string& message) {
         std::lock_guard<std::mutex> lock(m_lock);
         
         switch (logLevel) {
@@ -47,10 +42,6 @@ public:
             std::cout << " " << tag << ":" << message << std::endl;
         }
     }
+}
 
-private:
-    const std::string timeFormat;
-    std::mutex m_lock;
-};
-
-}}
+}
