@@ -1,3 +1,6 @@
+#ifndef Logger_H
+#define Logger_H
+
 #include <string>
 #include <mutex>
 
@@ -6,6 +9,7 @@ namespace Crystal { namespace core {
 enum LogLevel {
     Info = 0,
     Debug,
+    Warn,
     Error,
 };
 
@@ -28,3 +32,5 @@ private:
 };
 
 }}
+
+#endif
