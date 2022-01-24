@@ -5,7 +5,7 @@
 #include <unordered_map>
 #include "logger.hpp"
 
-namespace Crystal { namespace core {
+namespace Crystal { namespace base {
 class ConfigParser {
 public:
     ConfigParser() {}

@@ -6,7 +6,7 @@
 #include "config_parser.hpp"
 #include "logger.hpp"
 
-namespace Crystal { namespace core {
+namespace Crystal { namespace base {
 
 #define CONFIG_FILE "config.txt"
 

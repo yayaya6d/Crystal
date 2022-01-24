@@ -4,7 +4,7 @@
 #include "config_parser.hpp"
 
 
-namespace Crystal { namespace core {
+namespace Crystal { namespace base {
     std::unordered_map<std::string, std::any> ConfigParser::LoadConfig(const std::string& filePath, Logger* logger) {
         std::unordered_map<std::string, std::any> configs;
 
