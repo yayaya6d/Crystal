@@ -1,7 +1,7 @@
 #include <string>
 #include "config.hpp"
 
-namespace Crystal { namespace core {
+namespace Crystal { namespace base {
     std::string Config::GetStringConfigWithDefault(std::string key, std::string defaultString) {
         if (configs.find(key) != configs.end() && configs[key].type() == typeid(std::string)) {
             return std::any_cast<std::string>(configs[key]);

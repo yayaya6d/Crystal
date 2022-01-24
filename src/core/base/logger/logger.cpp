@@ -11,7 +11,7 @@
     }
 #endif
 
-namespace Crystal { namespace core {
+namespace Crystal { namespace base {
 
 void DefaultLogger::log (LogLevel logLevel, const std::string& tag, const std::string& message) {
         std::lock_guard<std::mutex> lock(m_lock);

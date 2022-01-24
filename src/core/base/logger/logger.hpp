@@ -4,7 +4,7 @@
 #include <string>
 #include <mutex>
 
-namespace Crystal { namespace core {
+namespace Crystal { namespace base {
 
 enum LogLevel {
     Info = 0,

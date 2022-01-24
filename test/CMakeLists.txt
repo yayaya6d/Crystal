@@ -20,8 +20,8 @@ add_executable(unit_tests
 # include directories
 target_include_directories(unit_tests PUBLIC 
   ${CMAKE_CURRENT_SOURCE_DIR}/helper
-  ${CMAKE_CURRENT_SOURCE_DIR}/../src/core/logger
-  ${CMAKE_CURRENT_SOURCE_DIR}/../src/core/config)
+  ${CMAKE_CURRENT_SOURCE_DIR}/../src/core/base//logger
+  ${CMAKE_CURRENT_SOURCE_DIR}/../src/core/base/config)
 
 # add link library
 target_link_libraries(unit_tests gtest_main logger config)

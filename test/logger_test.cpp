@@ -8,10 +8,10 @@ public:
     ~LoggerTest() {}
 };
 TEST(LoggerTest, log_logWithEmptyTimeFormat_logExpectedString) {
-    Crystal::core::Logger *defaultLogger = new Crystal::core::DefaultLogger("");
+    Crystal::base::Logger *defaultLogger = new Crystal::base::DefaultLogger("");
     
     auto func = [&]() {
-        defaultLogger->log(Crystal::core::Info, "test_tag", "test_logger");
+        defaultLogger->log(Crystal::base::Info, "test_tag", "test_logger");
     };
 
     std::string actualOutput = generateTestOutputString(func);
@@ -20,10 +20,10 @@ TEST(LoggerTest, log_logWithEmptyTimeFormat_logExpectedString) {
 }
 
 TEST(LoggerTest, log_logWithTimeFormat_logExpectedStringLength) {
-    Crystal::core::Logger *defaultLogger = new Crystal::core::DefaultLogger("%c");
+    Crystal::base::Logger *defaultLogger = new Crystal::base::DefaultLogger("%c");
     
     auto func = [&]() {
-        defaultLogger->log(Crystal::core::Info, "test_tag", "test_logger");
+        defaultLogger->log(Crystal::base::Info, "test_tag", "test_logger");
     };
 
     std::string actualOutput = generateTestOutputString(func);
