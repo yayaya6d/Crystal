@@ -1,16 +1,13 @@
 #include <gtest/gtest.h>
+#include "test_helper.hpp"
 #include "logger.hpp"
 
-std::string generateTestOutputString(std::function<void()> func) {
-    std::ostringstream oss;
-    std::streambuf* p_cout_streambuf = std::cout.rdbuf();
-    std::cout.rdbuf(oss.rdbuf());
-    func();
-    std::cout.rdbuf(p_cout_streambuf);
-    return oss.str();
-}
-
-TEST(loggerTestCases, log_logWithEmptyTimeFormat_logExpectedString) {
+class LoggerTest : public ::testing::Test {
+public:
+    LoggerTest() {}
+    ~LoggerTest() {}
+};
+TEST(LoggerTest, log_logWithEmptyTimeFormat_logExpectedString) {
     Crystal::core::Logger *defaultLogger = new Crystal::core::DefaultLogger("");
     
     auto func = [&]() {
@@ -22,7 +19,7 @@ TEST(loggerTestCases, log_logWithEmptyTimeFormat_logExpectedString) {
     EXPECT_EQ(actualOutput, "Info:  test_tag:test_logger\n");
 }
 
-TEST(loggerTestCases, log_logWithTimeFormat_logExpectedStringLength) {
+TEST(LoggerTest, log_logWithTimeFormat_logExpectedStringLength) {
     Crystal::core::Logger *defaultLogger = new Crystal::core::DefaultLogger("%c");
     
     auto func = [&]() {
