@@ -21,8 +21,8 @@ public:
     void operator=(const Config&) = delete;
     ~Config() {};
 
-    std::string GetStringConfigWithDefault(std::string key, std::string default);
-    int GetIntConfigWithDefault(std::string key, int default);
+    std::string GetStringConfigWithDefault(std::string key, std::string defaultString);
+    int GetIntConfigWithDefault(std::string key, int defaultInt);
 
 private:
     Config(Logger* logger);
